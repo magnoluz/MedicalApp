@@ -1,0 +1,30 @@
+<div class="container" style="padding-top:10px;">
+<br><br>
+<h2> Identifique-se: </h2> <br/>
+<form class="form-horizontal" [formGroup]="accountForm" (ngSubmit)="login(accountForm.value)">
+    <div class="form-group">
+        <label class="control-label col-xs-2">Email: </label>
+        <div class="col-xs-6">
+            <input matInput type="text" name="email" placeholder="Email" formControlName="email" style="width: 20%"> 
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="control-label col-xs-2">Senha:</label>
+        <div class="col-xs-6">
+            <input matInput type="password" name="password" placeholder="Senha" formControlName="password" style="width: 20%"> 
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-xs-10">
+            <input class="btn btn-default" type="submit" value="Entrar" />
+        </div>
+        <br>
+        <div class="col-sm-offset-2 col-xs-10">
+            <a routerLink="/accountInsert" routerLinkActive="active">Registre-se</a>
+        </div>
+    </div>
+</form>
+<br><br>
+</div>

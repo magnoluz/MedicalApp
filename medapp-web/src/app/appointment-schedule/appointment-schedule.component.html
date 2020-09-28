@@ -1,0 +1,25 @@
+  <div>
+    <h3>Agendar Consulta</h3>
+  </div>
+
+  <form class="example-container" [formGroup]="appointmentForm" (ngSubmit)="addAppointment(appointmentForm.value)">
+    <div class="form-row">
+        <label for="dateTime">Data e Hora</label>
+        <br>
+        <input matInput type="datetime-local" name="dateTime" placeholder="Data e Hora da Consulta" formControlName="dateTime" style="width: 20%">        
+        <br><br>
+        <label for="doctor">Nome do Médico</label>
+        <br>
+        <select matInput name="doctor" placeholder="Médico" formControlName="doctor" style="width: 20%">
+            <option [ngValue]="null" disabled>Choose your Doctor</option>
+            <option *ngFor="let doc of doctors" [ngValue]="doc">
+                {{doc.name}}
+            </option>
+        </select>        
+    </div>
+    <br><br>
+    <div class="form-group">
+        <button type="submit" mat-button color="primary">Agendar</button>
+    </div>
+  </form>
+  <br><br>
